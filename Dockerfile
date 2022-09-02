@@ -34,3 +34,6 @@ COPY --from=composer:latest /usr/bin/composer /usr/local/bin/composer
 RUN composer require setasign/fpdi \ 
 && composer require "ext-gd:*" --ignore-platform-reqs \
 && composer require mpdf/mpdf "^v8.0.7"
+
+EXPOSE 9000
+CMD ["/usr/local/sbin/php-fpm"]
